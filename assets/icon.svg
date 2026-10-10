@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#3A3A3C"/>
+      <stop offset="0.45" stop-color="#18181A"/>
+      <stop offset="1" stop-color="#0A0A0B"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.16"/>
+    </linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="120%" height="125%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- macOS icon grid: 824pt squircle on a 1024 canvas -->
+  <rect x="100" y="112" width="824" height="824" rx="186" fill="#000000" fill-opacity="0.45" filter="url(#drop)"/>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <rect x="103" y="103" width="818" height="818" rx="183" fill="none" stroke="url(#rim)" stroke-width="6"/>
+
+  <!-- [ picture ] -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M330 362 H290 V662 H330"/>
+    <path d="M694 362 H734 V662 H694"/>
+    <rect x="384" y="392" width="256" height="240" rx="30"/>
+    <path d="M384 584 L470 506 L536 566 L574 534 L640 590"/>
+    <circle cx="574" cy="454" r="22"/>
+  </g>
+</svg>
