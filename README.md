@@ -8,6 +8,8 @@
 
 A tiny macOS menu bar app that shows the images behind Claude Code's `[Image #N]` references, right in your terminal.
 
+<img src="./assets/screenshot.png" width="80%" alt="datpreview showing a hover preview of [Image #1] in Claude Code" />
+
 </div>
 
 ## ✨ Key Features
@@ -23,7 +25,7 @@ A tiny macOS menu bar app that shows the images behind Claude Code's `[Image #N]
 
 ## ⬇️ Install
 
-1. Download `datpreview-<version>.dmg` from [Releases](https://github.com/datwalkerv/datpreview/releases/latest), open it, and drag **datpreview** into **Applications**.
+1. Download `datpreview-<version>.dmg` from Releases, open it, and drag **datpreview** into **Applications**.
 2. Open datpreview. The first time, macOS may say it can't verify the developer, because the app isn't notarized. Go to **System Settings → Privacy & Security**, scroll down and click **Open Anyway**.
 3. Grant the two permissions the welcome window asks for (see below), then hover over any `[Image #N]`.
 
@@ -73,24 +75,6 @@ If datpreview isn't listed in either setting, click **+**, pick it from Applicat
 ### Finding the Reference
 - **Terminal.app and iTerm2** expose their text to Accessibility, so datpreview asks for the characters under the pointer and the exact position of `[Image #N]`.
 - **Zed** exposes no terminal text at all, so datpreview captures a thin strip around the pointer and reads it with Vision's accurate text recognition, in about 50 ms.
-
-### Good to Know
-- The session log format isn't documented by Anthropic and could change in a future Claude Code release.
-- Images pasted together with a slash command such as `/plan` are kept only as temporary files, which Claude Code later deletes. Their preview then says the image is no longer available.
-
-## 🧑‍💻 Build From Source
-
-Needs the Xcode Command Line Tools (`xcode-select --install`).
-
-```sh
-scripts/build-app.sh --install   # build and install to /Applications
-scripts/make-dmg.sh              # universal build → build/datpreview-<version>.dmg
-scripts/make-icons.sh            # regenerate icons from assets/icon.svg
-swift run corecheck              # checks for the session log reader
-swift run refprobe watch         # prints what datpreview sees under the pointer
-```
-
-macOS ties permissions to the app's signature. A build without a signing identity gets a new one every time, so you'd re-grant permissions after each rebuild. To keep them, create a self-signed **Code Signing** certificate in Keychain Access and run `export DATPREVIEW_SIGN_IDENTITY="<certificate name>"` before building. With an Apple Developer ID, `make-dmg.sh` can also notarize the DMG (see the script header).
 
 ## ⚖️ Privacy
 
