@@ -14,7 +14,7 @@ set -euo pipefail
 cd "${0:A:h}/.."
 
 APP=build/datpreview.app
-VERSION=0.1.1
+VERSION=0.1.2
 
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
